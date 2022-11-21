@@ -28,6 +28,8 @@ public class Storage : IStorage
 
     Task<bool> IStorage.TryRemoveAsync(string name)
     {
+        if(_values.Count==0)
+            throw new ArgumentOutOfRangeException("Tried removing when they were zero items");
         bool flag =_values.Remove(name);
         return Task<bool>.FromResult(flag);
     }
