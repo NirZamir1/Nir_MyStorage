@@ -51,7 +51,7 @@ public class StorageTests
     [Fact]
     public async Task ZeroItems_ShouldThrow_Test()
     {
-       await _storage.TryAddAsync(_2d);
+       //await _storage.TryAddAsync(_2d);
        await Assert.ThrowsAsync<ArgumentOutOfRangeException>(async ()=> 
          await _storage.TryRemoveAsync("abc"));
     }
