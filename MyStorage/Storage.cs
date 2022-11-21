@@ -28,6 +28,7 @@ public class Storage : IStorage
 
     Task<bool> IStorage.TryRemoveAsync(string name)
     {
-        throw new NotImplementedException();
+        bool flag =_values.Remove(name);
+        return Task<bool>.FromResult(flag);
     }
 }
